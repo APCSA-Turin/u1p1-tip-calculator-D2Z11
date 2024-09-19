@@ -3,7 +3,7 @@ import java.util.Scanner;
 // https://www.w3schools.com/java/java_arraylist.asp
 import java.util.ArrayList;
 
-public class TipCalculator {
+public class TipCalculatorExtraCredit {
     public static double roundToTwoPlaces(double num) {
         // https://stackoverflow.com/questions/11701399/round-up-to-2-decimal-places-in-java
         return Math.round(num * 100.0) / 100.0;
@@ -17,6 +17,21 @@ public class TipCalculator {
 
         // Learned this in an earlier lesson + w3schools: https://www.w3schools.com/java/java_arraylist.asp
         ArrayList<String> items = new ArrayList<String>();
+
+        // ## EXTRA CREDIT ##
+        System.out.println("Enter an item or type -1 to finish:");
+        // .trim is same in Javascript
+        String in = readIn.nextLine();
+        items.add(in);
+        // While is very similar to many languages
+        while (!in.equals("-1")) {
+            System.out.println("Enter an item or type -1 to finish:");
+            in = readIn.nextLine();
+            if (in.equals("-1")) {
+                break;
+            }
+            items.add(in);
+        }
 
         // NOTE: Why did I put roundToTwoPlaces in the string and not in the variable? It was sometimes giving incorrect results because the double didn't have enough detail/digits
         result.append("-------------------------------\n");
@@ -37,7 +52,14 @@ public class TipCalculator {
         // "best practices" 😒
         readIn.close();
 
-        return result.toString();
+        // return result.toString();
+        // ## EXTRA CREDIT ##
+        System.out.print(result.toString());
+        //items.size() you can figure this out using intellisense (looking at the options for arraylists)
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println(items.get(i));
+        }
+        return "";
     }
      //TEST YOUR PROGRAM IN main
      public static void main(String[] args) {
