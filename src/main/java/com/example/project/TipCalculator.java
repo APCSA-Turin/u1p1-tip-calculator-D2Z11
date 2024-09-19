@@ -1,7 +1,5 @@
 package com.example.project;
 import java.util.Scanner;
-// https://www.w3schools.com/java/java_arraylist.asp
-import java.util.ArrayList;
 
 public class TipCalculator {
     public static double roundToTwoPlaces(double num) {
@@ -14,9 +12,6 @@ public class TipCalculator {
         //DO NOT DELETE ANY OF THE CODE BELOW      
         StringBuilder result = new StringBuilder();
         Scanner readIn = new Scanner(System.in);
-
-        // Learned this in an earlier lesson + w3schools: https://www.w3schools.com/java/java_arraylist.asp
-        ArrayList<String> items = new ArrayList<String>();
 
         // NOTE: Why did I put roundToTwoPlaces in the string and not in the variable? It was sometimes giving incorrect results because the double didn't have enough detail/digits
         result.append("-------------------------------\n");
@@ -48,4 +43,3 @@ public class TipCalculator {
         System.out.println(calculateTip(people,percent,cost));
     }
 }
-        
