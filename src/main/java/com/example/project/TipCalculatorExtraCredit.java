@@ -1,3 +1,6 @@
+// IGNORE THIS FILE!!!
+
+
 package com.example.project;
 import java.util.Scanner;
 // https://www.w3schools.com/java/java_arraylist.asp
@@ -17,6 +20,7 @@ public class TipCalculatorExtraCredit {
 
         // Learned this in an earlier lesson + w3schools: https://www.w3schools.com/java/java_arraylist.asp
         ArrayList<String> items = new ArrayList<String>();
+        
 
         // ## EXTRA CREDIT ##
         System.out.println("Enter an item or type -1 to finish:");
@@ -27,11 +31,10 @@ public class TipCalculatorExtraCredit {
         while (!in.equals("-1")) {
             System.out.println("Enter an item or type -1 to finish:");
             in = readIn.nextLine();
-            if (in.equals("-1")) {
-                break;
-            }
             items.add(in);
         }
+        // Remove -1 (also it's not zero-indexed so make it zero-indexed)
+        items.remove(items.size() - 1);
 
         // NOTE: Why did I put roundToTwoPlaces in the string and not in the variable? It was sometimes giving incorrect results because the double didn't have enough detail/digits
         result.append("-------------------------------\n");
